@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{02C63405-EC2D-0DA9-36FA-4821DA0D01B1}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FinalScoreSceneScript.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameController.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/BranchBlockerScript.cs" Line="20" Column="27" />
+      <File FileName="Assets/Scripts/GameInstructionsImage.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ScreenManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Score.cs" Line="4" Column="54" />
+      <File FileName="Assets/Scripts/BranchVisible.cs" Line="50" Column="34" />
+      <File FileName="Assets/Scripts/FinalScoreSceneScript.cs" Line="38" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.KaldisCatch PreferredExecutionTarget="Unity.Editor" />
+  <MultiItemStartupConfigurations />
+</Properties>
