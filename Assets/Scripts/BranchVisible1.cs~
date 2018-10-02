@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BranchVisible : MonoBehaviour {
+
+	public GameObject Level01;
+	public GameObject Level02;
+	public GameObject Level03;
+	public GameObject Level04;
+	public GameObject Level05;
+	public GameObject Level06;
+	public GameObject Level07;
+	public GameObject Level08;
+	public GameObject Level09;
+	public GameObject Level10;
+
+	public int scoreBranchTest;
+ 
+	// Use this for initialization
+	void Start () {
+  
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (scoreBranchTest > 200)
+        {
+            Level10.SetActive(true);
+        }
+	}
+
+
+	public void ScoreGame()
+	{
+
+	}
+}

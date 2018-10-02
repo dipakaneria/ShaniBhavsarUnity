@@ -1,0 +1,79 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Facebook.Unity;
+using UnityEngine.UI;
+
+public class FacebookScript : MonoBehaviour
+{
+
+	public Text FriendsText;
+
+	private void Awake()
+	{
+		if (!FB.IsInitialized)
+		{
+			FB.Init(() =>
+			{
+				if (FB.IsInitialized)
+					FB.ActivateApp();
+				else
+					Debug.Log("Couldn't initialiaze Facebook.");
+			},
+			isGameShown =>
+			{
+				if (!isGameShown)
+					Time.timeScale = 0;
+				else
+					Time.timeScale = 1;
+			});
+		}
+		else
+			FB.ActivateApp();
+	}
+
+	#region Login / Logout
+	public void FacebookLogin()
+	{
+		var permissions = new List<string>() { "public_profile", "email", "user_friends" };
+		FB.LogInWithReadPermissions(permissions);
+	}
+
+	public void FacebookLogout()
+	{
+		FB.LogOut();
+	}
+	#endregion
+
+	public void FacebookShare()
+	{
+		FB.ShareLink(new System.Uri("http://holmquistconsulting.com"), "Ward is the best!",
+					 "Check out Ward's website!", new System.Uri("https://twitter.com/holmconsult"));
+	}
+
+	#region Inviting
+	public void FacebookGameRequest()
+	{
+		FB.AppRequest("Hey! Come and play this great Tradegame game creation!", title: "Kaldi's Catch game");
+	}
+
+	public void FacebookInvite()
+	{
+		FB.Mobile.AppInvite(new System.Uri("http://holmquistconsulting.com"));
+	}
+
+    #endregion
+
+	public void GetFriendsPlayingThisGame()
+	{
+		string query = "/me/friends";
+		FB.API(query, HttpMethod.GET, result =>
+		{
+			var dictionary = (Dictionary<string, object>)Facebook.MiniJSON.Json.Deserialize(result.RawResult);
+			var friendsList = (List<object>)dictionary["data"];
+			FriendsText.text = string.Empty;
+			foreach (var dict in friendsList)
+				FriendsText.text += ((Dictionary<string, object>)dict)["name"];
+		});
+	}
+}

@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: a3bb7620923ab4525a0f3e72bdfa4204
+timeCreated: 1525270582
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Waukegan LDO
+  fontNames:
+  - Waukegan LDO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 80df36947c6a9469e9dea5e3f6907494, type: 3}
+  - {fileID: 12800000, guid: 73f015b77e93241e5beea6da95ea63e6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

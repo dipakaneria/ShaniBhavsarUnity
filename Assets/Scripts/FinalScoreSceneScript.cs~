@@ -1,0 +1,60 @@
+﻿using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Text;
+using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
+                 
+
+public class FinalScoreSceneScript : MonoBehaviour {
+
+    private static Score data;
+    public int gameScore;
+    public Text scoreText;
+    public Text kCoinText;
+    public GameObject testGameObject;
+
+
+
+
+    private void Start()
+    {
+        if (File.Exists(Application.persistentDataPath + "/save.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/save.dat", FileMode.Open);
+            ScoreData scoredata = (ScoreData)bf.Deserialize(file);
+            gameScore = scoredata.gameScore;
+            file.Close();
+        }
+        else
+        {
+            gameScore = 0;
+        }
+
+        //ScoreText();
+        scoreText.text = "You scored\n" + gameScore.ToString() + " points!\nGreat job!";
+    }
+
+
+    private void Update()
+    {
+        
+    }
+
+    //public void ScoreText ()
+    //{
+    //    scoreText.text = "You scored\n" + gameScore.ToString() + " points!\nGreat job!";
+    //}
+
+
+    public void StartNewSession ()
+    {
+        File.Delete(Application.persistentDataPath + "/gameCount.dat");  
+        File.Delete(Application.persistentDataPath + "/save.dat");
+        SceneManager.LoadScene("Gameplay");
+    }
+	
+}

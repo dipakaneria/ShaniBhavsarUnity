@@ -1,0 +1,20 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameControlTutorialScript : MonoBehaviour {
+
+
+    public float health;
+    public float experience;
+
+	// Use this for initialization
+	void Start () {
+        DontDestroyOnLoad(gameObject); // Whatever gameObject I put this script on will persist through any and all scenes.)
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+}

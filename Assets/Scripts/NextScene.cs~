@@ -1,0 +1,44 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class NextScene : MonoBehaviour {
+	// Use this for initialization
+	//void Start()
+	//{
+
+		Scene bloop = SceneManager.GetActiveScene();
+		print("The Build Index of this scene is " + bloop.buildIndex + ".");
+		print("There is/are a total of " + SceneManager.sceneCountInBuildSettings + " scenes in Build Settings.");
+
+		if (bloop.buildIndex <= SceneManager.sceneCountInBuildSettings)
+		{
+
+			SceneManager.LoadScene(bloop.buildIndex + 1);
+		}
+		else
+		{
+			SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings);
+			Debug.Log("This is the last scene, Folks!");
+		}
+
+	//}   
+		//public void GoToNextScene ()
+		//{
+			
+		//}
+		//SceneManager.LoadScene(2);
+
+        // if statement - go to next scene as long as ActiveScene isn't the last scene in the array
+        // else statement - LoadScene.GetActiveScene?
+        // Do you want to add some kind of transition effect?
+
+
+        //Scene scene = SceneManager.GetActiveScene();
+        //SceneManager.LoadScene(bloop.buildIndex + 1);
+
+
+
+    
+}

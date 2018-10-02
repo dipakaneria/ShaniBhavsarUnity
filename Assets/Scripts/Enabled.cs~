@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enabled : MonoBehaviour {
+
+	public Renderer renderer;
+
+
+
+	// Use this for initialization
+	void Start () {
+		renderer = GetComponent<Renderer>();
+		renderer.enabled = true;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+}

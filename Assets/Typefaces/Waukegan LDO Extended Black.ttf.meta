@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: e78474e6c035c4e1f94264b20247c741
+timeCreated: 1525270582
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Waukegan LDO Extended Black
+  fontNames:
+  - Waukegan LDO Extended Black
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1d153d1b5a64f4694949a937d679e054, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

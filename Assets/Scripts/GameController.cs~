@@ -1,0 +1,313 @@
+﻿//using System;
+//using UnityEngine;
+//using UnityEngine.UI;
+//using System.Collections;
+using UnityEngine.SceneManagement;
+////using System; ??
+////using System.Diagnostics;
+//using System.Collections.Specialized;
+//using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization;
+//using System.IO;
+//using System.Text;
+//using UnityEngine.Analytics;
+
+// BELOW ARE FROM Score.cs
+using sys = System;
+using System.IO;
+using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Text;
+
+
+
+public class GameController : MonoBehaviour {
+
+	// Start of Declaration section.
+	// These variables are all Declared (assigned an Access Level (public/private) and give a Value Type,
+	// but not Initialized. That is, they haven't been given any values to hold yet.
+	public Camera cam;
+	public GameObject[] items;
+	public GameObject[] bonusItems;
+	public GameObject gameOverText;
+	public GameObject restartButton;
+	public GameObject splashScreen;
+	public GameObject startButton;
+	public GameObject resetScoreButton;
+
+	public GameObject game1Image;
+	public GameObject game2Image;
+	public GameObject game3Image;
+
+	public CupAvatarMover cupAvatarMover;
+	public Text timerText;
+	public float timeLeft;
+
+	public int playerGameScore;
+	public int maxNoOfItems;
+
+	public int kCoinDropCount;
+	public Text kCoinDropCountText;
+
+	public int gameCount;
+	public static int mazelTov;
+
+	private Rigidbody2D rb2D;
+	private float maxWidth;
+	private bool playing;
+	private Renderer rend;
+	// End of Declaration section.
+
+	private void Awake()
+	{
+		LoadGameCountWithSerializer();
+		print("gameCount in GameController.cs - Awake - main: " + gameCount);
+        print("GC-Awake() - kCoinCaught = " + Score.kCoinCaught);
+	}
+
+	//Use this for initialization
+	void Start ()
+	{
+		//print("GameController.cs - Start() has been called.");
+		//gameCount = 665;
+		//print("main script section - In Start(): gameCount = " + gameCount);
+		if (cam == null){
+			cam = Camera.main; 
+		}
+		rb2D = GetComponent<Rigidbody2D> ();
+		rend = GetComponent<Renderer> ();
+
+		playing = false; // Should be set to false.
+		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
+		Vector3 targetWidth = cam.ScreenToWorldPoint (upperCorner);
+		float itemWidth = rend.bounds.extents.x + 0.2f;
+		maxWidth = targetWidth.x - itemWidth;
+
+		// Counts number of Kcoins spawned.
+        kCoinDropCount = 0;
+
+        // Gets score from CupAvatar.
+		GameObject gameObject = GameObject.Find("CupAvatar");
+		Score scoreScript = gameObject.GetComponent<Score>();
+		playerGameScore = scoreScript.gameScore;
+		//print("playerGameScore = " + playerGameScore);
+
+		UpdateText ();
+		StartCoroutine(GameNumber());
+	}
+
+
+	//FixedUpdate is a fixed number that doesn't change with the frame rate.
+	void FixedUpdate () {
+		if (playing) {
+			timeLeft -= Time.deltaTime;
+			if (timeLeft < 0) {
+				timeLeft = 0;
+			}
+			UpdateText ();
+		}
+	}
+
+    // Starts the game. Called by the startButton.
+	public void StartGame () {
+        game1Image.SetActive(false);
+        game2Image.SetActive(false);
+        game3Image.SetActive(false);
+        splashScreen.SetActive (false);
+		startButton.SetActive (false);
+		resetScoreButton.SetActive(false);
+		cupAvatarMover.ToggleControl (true);
+		StartCoroutine (Spawn ());
+		StartCoroutine (Bonus ());
+        AudioSource audio = GetComponent<AudioSource>();
+		audio.Play();
+	}
+
+
+    // Main coroutine, spawns all falling items except the special K_coin.
+	IEnumerator Spawn () {
+		
+		yield return new WaitForSeconds (0.5f);
+		playing = true;
+		while (timeLeft > 0) // while (timeLeft > 0)
+		{
+			if (playerGameScore < 200)
+            {
+                maxNoOfItems = 2;
+            }
+            else if (playerGameScore < 400 && playerGameScore >= 200)
+            {
+                maxNoOfItems = 4;
+            }
+            else if (playerGameScore < 600 && playerGameScore >= 400)
+            {
+                maxNoOfItems = 6;
+            }
+            else if (playerGameScore < 800 && playerGameScore >= 600)
+            {
+                maxNoOfItems = items.Length;
+            }
+			else if (playerGameScore >= 800)
+			{
+				maxNoOfItems = items.Length;
+			}
+   
+
+            GameObject item = items[Random.Range(0, items.Length)]; //[Random.Range (0, maxNoOfItems)] - OR - [Random.Range (0, items.Length)]
+			Vector3 spawnPosition = new Vector3 (
+				Random.Range (-maxWidth + 1.5f, maxWidth - 1.5f), 
+										transform.position.y,
+				                         0.0f);
+			Quaternion spawnRotation = Quaternion.identity;
+            Instantiate (item, spawnPosition, spawnRotation);
+   
+			yield return new WaitForSeconds (Random.Range (0.7f, 1.2f)) ; //Put Random.Range in public variable to control
+																		 //frequency of item drops.
+		}
+		yield return new WaitForSeconds (1.0f);
+		gameOverText.SetActive (true);
+        cupAvatarMover.ToggleControl(false);
+		yield return new WaitForSeconds (1.0f);
+		//      restartButton.SetActive (true);
+		//resetScoreButton.SetActive(true);
+
+		SaveGameCountWithSerializer();
+
+		//yield return new WaitForSeconds(1.0f);
+
+
+		print("Here's gameCount in main running script: " + gameCount);
+		print("mazelTov = " + mazelTov);
+
+		if (mazelTov < 3)
+            {
+                SceneManager.LoadScene("Postgame Scene");
+            }
+            else
+            {
+                SceneManager.LoadScene("Final Score Scene");
+            }
+        // Copy of NextScreen script - END
+
+
+
+        // This is the end of the running script.
+
+		}
+
+	// Coroutine for K_coin (special catch item). Called in StartGame().
+	IEnumerator Bonus()
+	{
+		print("Bonus() coroutine started.");
+		yield return new WaitForSeconds(1.0f);
+        playing = true;
+
+        while (kCoinDropCount < 3 && Score.kCoinCaught == false)
+		{
+			//yield return new WaitForSeconds(Random.Range(10.0f, 15.0f));
+			GameObject bonusItem = bonusItems[Random.Range(0, bonusItems.Length)];
+			Vector3 spawnPosition = new Vector3(
+				Random.Range(-maxWidth + 1.5f, maxWidth - 1.5f),
+										transform.position.y,
+										 0.0f);
+			Quaternion spawnRotation = Quaternion.identity;
+			Instantiate(bonusItem, spawnPosition, spawnRotation);
+
+			if (bonusItem.tag == "K_coin")
+			{
+                kCoinDropCount = kCoinDropCount + 1;
+                print("kCoinDropCount = " + kCoinDropCount);
+			}
+
+            yield return new WaitForSeconds(2.0f); //(Random.Range(8.0f, 10.0f));
+		}
+	}
+
+	// Coroutine shows number of game in session. Called in Start().
+	IEnumerator GameNumber()
+	{
+		yield return new WaitForSeconds(0.65f);
+		if (!File.Exists(Application.persistentDataPath + "/gameCount.dat"))
+		{
+			game1Image.SetActive(true);
+		}
+		else if(mazelTov == 1)
+		{
+			game2Image.SetActive(true);
+		}
+		else if (mazelTov == 2)
+        {
+            game3Image.SetActive(true);
+        }
+	}
+
+	// Called in Start() and FixedUpdate().
+	void UpdateText () {
+		timerText.text = "Time Left:\n" + Mathf.RoundToInt (timeLeft);
+        kCoinDropCountText.text = "Kcoins spawned:\n" + kCoinDropCount;
+
+	}
+
+    // Called by the resetScoreButton.
+	public void ResetScore () {
+		File.Delete(Application.persistentDataPath + "/save.dat");
+        File.Delete(Application.persistentDataPath + "/gameCount.dat");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.buildIndex);
+	}
+
+	public void SaveGameCountWithSerializer()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        print("Save location:" + Application.persistentDataPath + " - in folder '/gameCount.dat'");
+        FileStream file = File.Create(Application.persistentDataPath + "/gameCount.dat");
+
+        GameCount gameCountData = new GameCount();
+        gameCountData.gameCount = gameCount + 1;
+
+		print("Here's new gameCount at end of game in GameController.cs - SGCWS (): " + gameCountData.gameCount);
+
+		mazelTov = gameCount + 1;
+
+
+		bf.Serialize(file, gameCountData);
+        file.Close();
+
+    }
+ 
+	public void LoadGameCountWithSerializer ()
+	{
+		if (File.Exists(Application.persistentDataPath + "/gameCount.dat"))
+        {
+            FileStream file = File.Open(Application.persistentDataPath + "/gameCount.dat", FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            print(Application.persistentDataPath);
+            GameCount gameCountData = (GameCount)bf.Deserialize(file);
+            file.Close();
+
+		    gameCount = gameCountData.gameCount;
+			print("if - Previous gameCount = " + gameCount);
+           
+        }
+        else
+        {
+			gameCount = 0;
+            print("(GameController.cs/LGCWS()/else - No gameCount serialized!");
+            print("GameController.cs/LGCWS()/else - setting gameCount to: " + gameCount);
+        }
+
+        //print("gameCount at start of game is = " + gameCount);
+	}
+
+
+ 
+}
+
+[sys.Serializable]
+class GameCount
+{
+    public int gameCount;
+}

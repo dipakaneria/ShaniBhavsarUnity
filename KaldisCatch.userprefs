@@ -1,0 +1,28 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Item Physics Scripts\CookiePhysics.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GoatKick.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BranchVisible.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CupAvatarMover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Score.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DestroyOnContact.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CupInnerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\_glassesPhysics.cs" Line="30" Column="3" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\_newspaperPhysics.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\_phonePhysics.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\_pocketwatchPhysics.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\BananaBreadPhysics.cs" Line="24" Column="26" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\BearclawPhysics.cs" Line="20" Column="26" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\ChocOatPhysics.cs" Line="24" Column="26" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\CookiePhysics.cs" Line="24" Column="26" />
+      <File FileName="Assets\Scripts\Item Physics Scripts\KcoinPhysics.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FinalScene.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

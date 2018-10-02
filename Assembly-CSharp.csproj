@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{02C63405-EC2D-0DA9-36FA-4821DA0D01B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_2;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+     <Compile Include="Assets\Scripts\BackToGame.cs" />
+     <Compile Include="Assets\Scripts\BranchBlockerScript.cs" />
+     <Compile Include="Assets\Scripts\BranchVisible.cs" />
+     <Compile Include="Assets\Scripts\CupAvatarMover.cs" />
+     <Compile Include="Assets\Scripts\CupInnerScript.cs" />
+     <Compile Include="Assets\Scripts\DestroyOnContact.cs" />
+     <Compile Include="Assets\Scripts\Explode.cs" />
+     <Compile Include="Assets\Scripts\FinalScene.cs" />
+     <Compile Include="Assets\Scripts\ForceAtSpawnPosX.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameInstructionsImage.cs" />
+     <Compile Include="Assets\Scripts\GoToNextScene.cs" />
+     <Compile Include="Assets\Scripts\GoatKick.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\BananaBreadPhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\BearclawPhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\ChocOatPhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\CookiePhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\KcoinPhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\_glassesPhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\_newspaperPhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\_phonePhysics.cs" />
+     <Compile Include="Assets\Scripts\Item Physics Scripts\_pocketwatchPhysics.cs" />
+     <Compile Include="Assets\Scripts\PostGameScript.cs" />
+     <Compile Include="Assets\Scripts\PregameImageMover.cs" />
+     <Compile Include="Assets\Scripts\RandomX.cs" />
+     <Compile Include="Assets\Scripts\RandomY.cs" />
+     <Compile Include="Assets\Scripts\ResetScore.cs" />
+     <Compile Include="Assets\Scripts\Restart.cs" />
+     <Compile Include="Assets\Scripts\RotateCCW.cs" />
+     <Compile Include="Assets\Scripts\RotateCW.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\ScreenManager.cs" />
+     <Compile Include="Assets\Scripts\SelfDestruct.cs" />
+     <Compile Include="Assets\Scripts\Testing Scripts\BranchVisibleTest.cs" />
+     <Compile Include="Assets\Scripts\Testing Scripts\animController.cs" />
+     <Compile Include="Assets\Scripts\shot1ScoreText.cs" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\billing\an_billing.jar.txt" />
+     <None Include="Assets\Plugins\Android\AN_Res\res\xml\file_paths.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-plus.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-gcm.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-iid.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\AN_Res\res\values\analytics.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\firebase\firebase-common.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-appinvite.txt" />
+     <None Include="Assets\Plugins\StansAssets\Modules\AndroidNative\Documentation\ReadMe.txt" />
+     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-analytics.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-games.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\social\an_social.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\libs\support-v4-24.1.1.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\libs\android-support-v4.txt" />
+     <None Include="Assets\Plugins\Android\AN_Res\res\values\analytics.xml" />
+     <None Include="Assets\EffectExamples\Editor\PackageManagerAssembly\PackageImportList.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\an_googleplay.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\libs\image-chooser-library-1.6.0.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-games.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\fitness\play-services-fitness.txt" />
+     <None Include="Assets\Ultra Emissive Particles Shader\Shaders\ParticleEmmissive.shader" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-drive.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\Versions\MSP_VersionInfo.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\fitness\play-services-fitness.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Modules\ManifestManager\default.xml" />
+     <None Include="Assets\Plugins\StansAssets\Modules\AndroidNative\Documentation\AN_VersionNotes.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-analytics.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\firebase\firebase-analytics-impl.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-gcm.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\androidnative.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-auth.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\social\an_social.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-drive.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\AndroidManifest.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-ads-lite.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\firebase\firebase-analytics.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-base.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\androidnative.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\an_googleplay.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-auth-base.jar.txt" />
+     <None Include="Assets\Plugins\Android\AN_Res\res\values\version.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-tasks.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\app_licensing\an_licensing_library.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\billing\an_billing.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\firebase\firebase-dynamic-links.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\Versions\AN_VersionInfo.txt" />
+     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.71.0.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\AN_Res\AndroidManifest.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-basement.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\firebase\firebase-iid.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-basement.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\social\twitter4j-core-4.0.4.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-analytics-impl.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-auth-base.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\fitness\an_fitness.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-plus.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-ads.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-ads.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\libs\an_sa_soomla.txt" />
+     <None Include="Assets\Plugins\Android\AN_Res\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-appinvite.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-safetynet.txt" />
+     <None Include="Assets\Plugins\Android\AN_Res\res\values\ids.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-iid.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-ads-lite.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-tasks.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\AN_Res\res\values\version.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-base.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\AN_Res\res\xml\file_paths.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\AN_Res\res\values\ids.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-auth.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-safetynet.jar.txt" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\google_play\play-services-analytics-impl.jar.txt" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\StansAssets\Support\NativeLibraries\Android\fitness\an_fitness.jar.txt" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>D:/Unity OutSource projects/kaldis-catch-problems-master/KaldisCatch/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{C187AC91-468F-BDD7-17E1-A3401CC14384}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

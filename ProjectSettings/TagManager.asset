@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Cup
+  - Bomb
+  - CatchLevel1
+  - AvoidLevel1
+  - CatchLevel2
+  - AvoidLevel2
+  - CatchLevel3
+  - AvoidLevel3
+  - CatchLevel4
+  - AvoidLevel4
+  - Wildcard
+  - Catch
+  - Avoid
+  - Branch10
+  - Branch01
+  - Branch02
+  - Branch03
+  - Fire
+  - K_coin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 2818937807
+    locked: 0
+  - name: Foreground
+    uniqueID: 308048835
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
